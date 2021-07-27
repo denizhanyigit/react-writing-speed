@@ -2,11 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import reportWebVitals from './reportWebVitals';
+import ThemeContextProvider from "./context/ThemeContext";
+
+const AppConnector = () => {
+  return (
+    <ThemeContextProvider>
+      <App/>
+    </ThemeContextProvider>
+  )
+}
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+   <AppConnector/>
   </React.StrictMode>,
   document.getElementById('root')
 );
